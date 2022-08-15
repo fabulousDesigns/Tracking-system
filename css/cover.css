@@ -259,33 +259,128 @@ label {
   margin-right: 40px;
 }
 /*  */
-ul.timeline {
-  list-style-type: none;
+.form-title {
+  color: #f75842;
+}
+.timeline {
+  margin: 0 0 45px;
+  padding: 0;
   position: relative;
 }
-ul.timeline:before {
-  content: " ";
-  background: #d4d9df;
-  display: inline-block;
+
+.timeline::before {
+  border-radius: 0.25rem;
+  background-color: var(--color-danger);
+  bottom: 0;
+  content: "";
+  left: 31px;
+  margin: 0;
   position: absolute;
-  left: 29px;
-  width: 2px;
-  height: 100%;
-  z-index: 400;
+  top: 0;
+  width: 4px;
 }
-ul.timeline > li {
-  margin: 20px 0;
-  padding-left: 20px;
+
+.timeline > div {
+  margin-bottom: 15px;
+  margin-right: 10px;
+  position: relative;
 }
-ul.timeline > li:before {
-  content: " ";
-  background: white;
-  display: inline-block;
-  position: absolute;
+
+.timeline > div::before,
+.timeline > div::after {
+  content: "";
+  display: table;
+}
+
+.timeline > div > .timeline-item {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  margin-left: 70px;
+  margin-right: 15px;
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+}
+
+.timeline > div > .timeline-item > .time {
+  color: var(--color-danger);
+  float: right;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.timeline > div > .timeline-item > .timeline-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  color: var(--color-danger);
+  font-size: 16px;
+  line-height: 1.1;
+  margin: 0;
+  padding: 10px;
+}
+
+.timeline > div > .timeline-item > .timeline-header > a {
+  font-weight: 600;
+}
+
+.timeline > div > .timeline-item > .timeline-body,
+.timeline > div > .timeline-item > .timeline-footer {
+  padding: 10px;
+}
+
+.timeline > div > .timeline-item > .timeline-body > img {
+  margin: 10px;
+}
+
+.timeline > div > .timeline-item > .timeline-body > dl,
+.timeline > div > .timeline-item > .timeline-body ol,
+.timeline > div > .timeline-item > .timeline-body ul {
+  margin: 0;
+}
+
+.timeline > div > .timeline-item > .timeline-footer > a {
+  color: #fff;
+}
+
+.timeline > div > .fa,
+.timeline > div > .fas,
+.timeline > div > .far,
+.timeline > div > .fab,
+.timeline > div > .fal,
+.timeline > div > .fad,
+.timeline > div > .svg-inline--fa,
+.timeline > div > .ion {
+  background-color: var(--color-danger);
   border-radius: 50%;
-  border: 3px solid #22c0e8;
-  left: 20px;
-  width: 20px;
-  height: 20px;
-  z-index: 400;
+  font-size: 16px;
+  height: 30px;
+  left: 10px;
+  line-height: 30px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 30px;
+}
+
+.timeline > div > .svg-inline--fa {
+  padding: 7px;
+}
+
+.timeline > .time-label > span {
+  border-radius: 4px;
+  background-color: var(--color-danger);
+  display: inline-block;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.timeline-inverse > div > .timeline-item {
+  box-shadow: none;
+  background-color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+}
+
+.timeline-inverse > div > .timeline-item > .timeline-header {
+  border-bottom-color: #dee2e6;
 }
