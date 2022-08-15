@@ -62,9 +62,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($conn);
 }
 ?>
-<?php
-include_once("./config/header.php")
-?>
+<?php 
+include_once("header.php");
+ ?>
 <body class="text-center"> 
 <div class="body-m">
 <main class="form-signin">
