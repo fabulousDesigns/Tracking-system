@@ -33,42 +33,47 @@ include_once("header.php");
                     </div>
                     <div class="col-md-9">
                         <div class="input-group">
-                            <input type="search" class="form-control" placeholder="Enter your Tracking Number" />
-                            <span class="input-group-addon"><input type="submit" value="Search" class="btn btn-primary" /></span>
-                            <div class="timeline" id="parcel_history">
-
+                            <input type="search" id="ref_no" class="form-control form-control-sm" placeholder="Type the tracking number here">
+                            <div class="input-group-append">
+                                <button type="button" id="track-btn" class="btn btn-sm btn-primary btn-gradient-primary">
+                                    <i class="fa fa-search"></i>
+                                </button>
                             </div>
+                        </div>
+                        <p>
+                            <small> ex <strong>123456789</strong></small>
+                        </p>
+                        <div class="timeline" id="parcel_history">
 
                         </div>
                     </div>
-                    <p>
-                        ex <strong>123456789</strong>
-                    </p>
-                    <div id="clone_timeline-item" class="d-none">
-                        <div class="iitem">
-                            <i class="fas fa-box bg-blue"></i>
-                            <div class="timeline-item">
-                                <span class="time"><i class="fas fa-clock"></i> <span class="dtime">12:05</span></span>
-                                <div class="timeline-body">
-                                    asdasd
-                                </div>
-                            </div>
+
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div id="clone_timeline-item" class="d-none">
+                <div class="iitem">
+                    <i class="fas fa-box bg-blue"></i>
+                    <div class="timeline-item">
+                        <span class="time"><i class="fas fa-clock"></i> <span class="dtime">12:05</span></span>
+                        <div class="timeline-body">
+                            asdasd
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
-    </form>
-
+        </div>
     </div>
 </body>
 <script>
     function track_now() {
-        start_load()
+        // start_load()
         var tracking_num = $('#ref_no').val()
         if (tracking_num == '') {
             $('#parcel_history').html('')
-            end_load()
+            // end_load()
         } else {
             $.ajax({
                 url: 'ajax.php?action=get_parcel_heistory',
@@ -78,8 +83,8 @@ include_once("header.php");
                 },
                 error: err => {
                     console.log(err)
-                    alert_toast("An error occured", 'error')
-                    end_load()
+                    alert("An error occured", 'error')
+                    // end_load()
                 },
                 success: function(resp) {
                     if (typeof resp === 'object' || Array.isArray(resp) || typeof JSON.parse(resp) === 'object') {
@@ -94,11 +99,11 @@ include_once("header.php");
                             })
                         }
                     } else if (resp == 2) {
-                        alert_toast('Unkown Tracking Number.', "error")
+                        alert('Unkown Tracking Number.', "error")
                     }
                 },
                 complete: function() {
-                    end_load()
+                    // end_load()
                 }
             })
         }
