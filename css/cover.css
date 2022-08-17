@@ -45,7 +45,12 @@ body {
 }
 
 body {
-  background: var(--color-bg1);
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
   font-family: "Oxygen", sans-serif;
 }
 
