@@ -41,7 +41,7 @@
     </header>
 
     <main class="px-3">
-      <h1>Global Cargo Shippers & Logistics</h1>
+      <h1>Global Cargo Shippers & Logistics management</h1>
       <p class="lead">
         Welcome to the best Logistics solutions you can rely on! We manage your complex logistics issues so you can focus on
         building a stronger business, faster
